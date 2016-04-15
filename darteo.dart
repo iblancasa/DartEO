@@ -40,8 +40,7 @@ List crossover(List chromosome1, List chromosome2){
   var length = chromosome1.length;
   var xover_point = rng.nextInt(length);
   var scope = 1 + rng.nextInt(length - xover_point);
-  print(xover_point);
-  print(scope);
+
   var new_chrom1 =new List(length);
   var new_chrom2 =new List(length);
 
