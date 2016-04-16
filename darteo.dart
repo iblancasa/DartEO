@@ -3,6 +3,36 @@ import 'dart:math';
 
 var rng = new Random();
 
+double computeTimeChromosome(List chromosome, int iterations){
+  Stopwatch stopwatch = new Stopwatch()..start();
+
+  for(int i = 0;i<iterations;i++){
+      mutate1(chromosome);
+  }
+  return stopwatch.elapsedMicroseconds/1000000;
+}
+
+double computeTime2Chromosomes(List chromosome1, List chromosome2, int iterations){
+  Stopwatch stopwatch = new Stopwatch()..start();
+
+  for(int i = 0;i<iterations;i++){
+      List result = crossover(chromosome1,chromosome2);
+      chromosome1 = result[0];
+      chromosome2 = result[1];
+  }
+  return stopwatch.elapsedMicroseconds/1000000;
+}
+
+double computeTimeFitness(int length, int iterations){
+  Stopwatch stopwatch = new Stopwatch()..start();
+  List chromosome;
+
+  for(int i = 0;i<iterations;i++){
+      chromosome = random_chromosome(length);
+      compute_fitness(chromosome);
+  }
+  return stopwatch.elapsedMicroseconds/1000000;
+}
 
 List random_chromosome(int length){
   List chromosome=new List(length);
@@ -64,3 +94,5 @@ List crossover(List chromosome1, List chromosome2){
   result[1]=new_chrom2;
   return result;
 }
+
+
