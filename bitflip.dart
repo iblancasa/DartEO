@@ -11,7 +11,7 @@ void main() {
 
   while (length<top_length){
     List chromosome = random_chromosome(length);
-    print("Dart-BitVector, " +length.toString()+ ", "
+    print("Dart-List, " +length.toString()+ ", "
         +computeTimeChromosome(chromosome, iterations).toString());
     length *= 2;
   }

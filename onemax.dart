@@ -7,7 +7,7 @@ void main() {
   int top_length = 32768;
 
   while (length<top_length){
-    print("Dart-BitVector, " +length.toString()+ ", "+computeTimeFitness(length, iterations).toString());
+    print("Dart-List, " +length.toString()+ ", "+computeTimeFitness(length, iterations).toString());
     length *= 2;
   }
 }
